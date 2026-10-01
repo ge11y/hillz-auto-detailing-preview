@@ -5,12 +5,13 @@ const leads: Array<Record<string, string>> = [];
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
   const name = String(body.name || "").trim();
+  const email = String(body.email || "").trim();
   const phone = String(body.phone || "").trim();
   const message = String(body.message || "").trim();
   if (!name || !phone) {
     return NextResponse.json({ ok: false, error: "Name and phone required" }, { status: 400 });
   }
-  const row = { name, phone, message, at: new Date().toISOString() };
+  const row = { name, email, phone, message, at: new Date().toISOString() };
   leads.push(row);
   console.log("[lead]", row);
   return NextResponse.json({ ok: true });

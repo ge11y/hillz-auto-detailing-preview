@@ -1,4 +1,4 @@
-const TEL = "tel:+16032350453";
+const TEL = "tel:6032350453";
 
 export default function MobileCallBar() {
   return (
@@ -7,7 +7,7 @@ export default function MobileCallBar() {
         href={TEL}
         className="flex items-center justify-center w-full rounded-lg bg-yellow text-ink font-semibold py-3 cursor-pointer"
       >
-        Call (603) 235-0453
+        Call 603-235-0453
       </a>
     </div>
   );

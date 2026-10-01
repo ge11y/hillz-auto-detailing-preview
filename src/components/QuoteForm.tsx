@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function QuoteForm({ dark = true }: { dark?: boolean }) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
@@ -16,7 +17,7 @@ export default function QuoteForm({ dark = true }: { dark?: boolean }) {
     const res = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phone, message }),
+      body: JSON.stringify({ name, email, phone, message }),
     });
     setLoading(false);
     if (!res.ok) {
@@ -25,6 +26,7 @@ export default function QuoteForm({ dark = true }: { dark?: boolean }) {
     }
     setStatus("ok");
     setName("");
+    setEmail("");
     setPhone("");
     setMessage("");
   }
@@ -38,6 +40,16 @@ export default function QuoteForm({ dark = true }: { dark?: boolean }) {
       <div>
         <label className="block text-xs uppercase tracking-wider text-muted mb-1">Name</label>
         <input className={field} value={name} onChange={(e) => setName(e.target.value)} required />
+      </div>
+      <div>
+        <label className="block text-xs uppercase tracking-wider text-muted mb-1">Email</label>
+        <input
+          className={field}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
       </div>
       <div>
         <label className="block text-xs uppercase tracking-wider text-muted mb-1">Phone</label>
@@ -55,7 +67,9 @@ export default function QuoteForm({ dark = true }: { dark?: boolean }) {
         {loading ? "Sending…" : "Send"}
       </button>
       {status === "ok" && <p className="text-sm text-green-400">Thanks — we got your request.</p>}
-      {status === "err" && <p className="text-sm text-red-400">Something went wrong. Call (603) 235-0453.</p>}
+      {status === "err" && (
+        <p className="text-sm text-red-400">Something went wrong. Call 603-235-0453.</p>
+      )}
     </form>
   );
 }

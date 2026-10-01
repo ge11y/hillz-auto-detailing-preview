@@ -1,22 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
 
-const PHONE = "(603) 235-0453";
-const TEL = "tel:+16032350453";
+const PHONE = "603-235-0453";
+const TEL = "tel:6032350453";
 const MAPS =
   "https://www.google.com/maps/place/?q=place_id:ChIJHzlrNPGr44kRDMT2WsqFQD8";
 
 const HOURS = [
-  ["Monday", "8 AM–5 PM"],
-  ["Tuesday", "8 AM–5 PM"],
-  ["Wednesday", "8 AM–5 PM"],
-  ["Thursday", "8 AM–5 PM"],
-  ["Friday", "8 AM–5 PM"],
-  ["Saturday", "8 AM–2 PM"],
+  ["Monday", "9:00 AM–6:00 PM"],
+  ["Tuesday", "9:00 AM–6:00 PM"],
+  ["Wednesday", "9:00 AM–6:00 PM"],
+  ["Thursday", "9:00 AM–6:00 PM"],
+  ["Friday", "9:00 AM–6:00 PM"],
+  ["Saturday", "By Appointment"],
   ["Sunday", "Closed"],
 ];
+const EMAIL = "hillzautodetailing@gmail.com";
 
 export default function HomePage() {
   return (
@@ -37,9 +39,10 @@ export default function HomePage() {
           <div className="relative z-10 mx-auto max-w-6xl w-full px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-tight tracking-wide">
-                Hillz Auto Detailing
+                Hillz Auto Detailing LLC
               </h1>
-              <p className="mt-4 text-lg text-concrete max-w-md">
+              <p className="mt-3 text-xl text-yellow font-semibold">Ready to treat yourself?</p>
+              <p className="mt-3 text-lg text-concrete max-w-md">
                 Car detailing service in Hampstead, NH. Women-owned. 4.8★ from 17 Google reviews.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -94,9 +97,9 @@ export default function HomePage() {
                 <p className="text-sm text-chrome/80 mb-4">
                   Coatings are priced with a standard prep. Contact for a quote.
                 </p>
-                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Contact for a quote →
-                </a>
+                <Link href="/services/system-x-ceramic-protection" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Learn more →
+                </Link>
               </article>
 
               <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
@@ -107,9 +110,9 @@ export default function HomePage() {
                 <p className="text-sm text-chrome/80 mb-4">
                   Custom paint correction to restore your vehicle&apos;s paint to its finest.
                 </p>
-                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Contact for a quote →
-                </a>
+                <Link href="/services/paint-correction" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Learn more →
+                </Link>
               </article>
 
               <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
@@ -117,9 +120,9 @@ export default function HomePage() {
                   03
                 </div>
                 <h3 className="font-display text-lg uppercase tracking-wide mb-2">Exterior Detail</h3>
-                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Contact us →
-                </a>
+                <Link href="/services/exterior-detail" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Learn more →
+                </Link>
               </article>
             </div>
           </div>
@@ -208,7 +211,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="font-display text-3xl uppercase tracking-wide mb-4">Service Areas</h2>
             <p className="text-chrome/80 max-w-xl">
-              Based in <strong>Hampstead, NH</strong> at 4 Owens Ct #6. Call to confirm availability for your vehicle.
+              Based in <strong>Hampstead, NH</strong> at 4 Owens Ct unit 6. Call to confirm availability for your vehicle.
             </p>
             <a href={TEL} className="inline-flex mt-6 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer">
               Call {PHONE}
@@ -220,15 +223,16 @@ export default function HomePage() {
         <footer id="contact" className="bg-ink text-white pt-16 pb-10">
           <div className="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-              <h3 className="font-display uppercase tracking-wide mb-3">Hillz Auto Detailing</h3>
+              <h3 className="font-display uppercase tracking-wide mb-3">Hillz Auto Detailing LLC</h3>
               <p className="text-muted text-sm">Car detailing service · Hampstead, NH</p>
               <p className="text-muted text-sm mt-2">Women-owned</p>
+              <p className="text-yellow text-sm mt-3">Ready to treat yourself?</p>
             </div>
             <div>
               <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Visit</h3>
               <p className="text-sm text-concrete">
-                4 Owens Ct #6<br />
-                Hampstead, NH 03841
+                4 Owens Ct unit 6<br />
+                Hampstead, NH, USA
               </p>
               <a href={MAPS} target="_blank" rel="noopener noreferrer" className="text-yellow text-sm mt-2 inline-block hover:underline">
                 Open in Google Maps
@@ -244,11 +248,15 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+              <p className="text-xs text-muted mt-3">Closed on major holidays</p>
             </div>
             <div>
               <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Contact</h3>
               <a href={TEL} className="block text-yellow font-semibold hover:underline cursor-pointer">
                 {PHONE}
+              </a>
+              <a href={`mailto:${EMAIL}`} className="block text-concrete text-sm mt-2 hover:text-yellow hover:underline cursor-pointer">
+                {EMAIL}
               </a>
               <a href="#quote" className="inline-flex mt-4 rounded-lg bg-yellow text-ink font-semibold px-4 py-2 text-sm hover:brightness-110 cursor-pointer">
                 Get Free Quote
@@ -256,7 +264,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mx-auto max-w-6xl px-4 mt-12 pt-6 border-t border-chrome text-xs text-muted">
-            Preview only · Not indexed · © Hillz Auto Detailing
+            Preview only · Not indexed · © Hillz Auto Detailing LLC
           </div>
         </footer>
       </main>
