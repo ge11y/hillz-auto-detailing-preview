@@ -19,7 +19,7 @@ const RELATED = [
 
 export default function PaintCorrectionPage() {
   return (
-    <ServicePage title="Paint Correction" heroSrc="/assets/services/paint-correction.webp" related={RELATED}>
+    <ServicePage title="Paint Correction" heroSrc="/assets/paint-correction-hero.webp" related={RELATED}>
       <div className="inline-flex items-center gap-2 text-race mb-4">
         <Sparkles className="h-5 w-5" aria-hidden />
         <span className="text-xs uppercase tracking-wide font-semibold">Paint Correction</span>
