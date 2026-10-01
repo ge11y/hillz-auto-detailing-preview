@@ -32,6 +32,13 @@ const HOURS = [
 ];
 const EMAIL = "hillzautodetailing@gmail.com";
 
+const TRUST_CHIPS: Array<{ title: string; detail: string; href?: string }> = [
+  { title: "4.8★ Google", detail: "17 reviews on Google", href: MAPS },
+  { title: "Women-Owned", detail: "Identifies as women-owned on Google" },
+  { title: "Licensed & Insured", detail: "Peace of mind on every visit" },
+  { title: "Locally Owned", detail: "Hampstead, NH" },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -48,7 +55,7 @@ export default function HomePage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/75 to-ink/55" />
-          <div className="relative z-10 mx-auto max-w-6xl w-full px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+          <div className="relative z-10 mx-auto max-w-6xl w-full px-4 py-16 pb-36 md:py-24 md:pb-36 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-tight tracking-wide">
                 Hillz Auto Detailing LLC
@@ -83,6 +90,58 @@ export default function HomePage() {
               <QuoteForm dark />
             </div>
           </div>
+
+          <aside
+            aria-labelledby="hero-trust-heading"
+            className="absolute inset-x-0 bottom-0 z-20 border-y border-white/10 bg-ink/95 shadow-[0_-10px_30px_rgba(11,13,16,0.25)] backdrop-blur-sm"
+          >
+            <div className="mx-auto max-w-6xl px-4 py-3 md:py-4">
+              <h2 id="hero-trust-heading" className="sr-only">Why Us</h2>
+              <div className="trust-chip-scroll -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1">
+                {TRUST_CHIPS.map((chip) => {
+                  const content = (
+                    <>
+                      <span className="mb-1 block font-display text-sm uppercase tracking-wide text-yellow">
+                        {chip.title}
+                      </span>
+                      <span className="block text-sm leading-snug text-white/80">{chip.detail}</span>
+                    </>
+                  );
+
+                  return chip.href ? (
+                    <a
+                      key={chip.title}
+                      href={chip.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group min-w-[min(82vw,300px)] shrink-0 snap-start rounded-xl border border-white/15 border-l-2 border-l-yellow bg-black/20 p-3 transition-colors hover:border-yellow/70 hover:bg-white/10 md:min-w-0 md:flex-1"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={chip.title}
+                      className="min-w-[min(82vw,300px)] shrink-0 snap-start rounded-xl border border-white/15 border-l-2 border-l-race bg-black/20 p-3 md:min-w-0 md:flex-1"
+                    >
+                      {content}
+                    </div>
+                  );
+                })}
+                <div className="min-w-[min(82vw,300px)] shrink-0 snap-start rounded-xl border border-white/15 border-l-2 border-l-yellow bg-black/20 p-3 md:min-w-0 md:flex-1">
+                  <span className="mb-1 block font-display text-sm uppercase tracking-wide text-yellow">
+                    Free Quotes
+                  </span>
+                  <span className="block text-sm leading-snug text-white/80">
+                    Call or send a message — no obligation
+                  </span>
+                  <span className="mt-2 flex gap-3 text-xs font-semibold">
+                    <a href={PHONE_TEL} className="text-yellow hover:underline">Call</a>
+                    <a href="#quote" className="text-white hover:text-yellow hover:underline">Send a message</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </aside>
         </section>
 
         {/* SYSTEM X — Protection with a Glow */}

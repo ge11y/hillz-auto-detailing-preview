@@ -8,3 +8,10 @@ body { @apply bg-concrete text-ink font-body antialiased; }
   html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
 }
+
+.trust-chip-scroll {
+  scrollbar-width: none;
+}
+.trust-chip-scroll::-webkit-scrollbar {
+  display: none;
+}
