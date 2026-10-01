@@ -15,22 +15,12 @@ import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
 import Gallery from "@/components/Gallery";
-import { GOLDIE_BOOK, PHONE_TEL } from "@/lib/site";
+import { EMAIL, GALLERY_SHOTS, GOLDIE_BOOK, HOURS, PHONE_TEL } from "@/lib/site";
 
 const PHONE = "603-235-0453";
 const MAPS =
   "https://www.google.com/maps/place/?q=place_id:ChIJHzlrNPGr44kRDMT2WsqFQD8";
 
-const HOURS = [
-  ["Monday", "9:00 AM–6:00 PM"],
-  ["Tuesday", "9:00 AM–6:00 PM"],
-  ["Wednesday", "9:00 AM–6:00 PM"],
-  ["Thursday", "9:00 AM–6:00 PM"],
-  ["Friday", "9:00 AM–6:00 PM"],
-  ["Saturday", "By Appointment"],
-  ["Sunday", "Closed"],
-];
-const EMAIL = "hillzautodetailing@gmail.com";
 
 const TRUST_CHIPS: Array<{ title: string; detail: string; href?: string }> = [
   { title: "4.8★ Google", detail: "17 reviews on Google", href: MAPS },
@@ -292,27 +282,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <Gallery
-          shots={[
-            { src: "/assets/truck.webp", alt: "truck" },
-            { src: "/assets/truck.jpg", alt: "truck" },
-            { src: "/assets/truck-and-plane.jpg", alt: "truck and plane" },
-            { src: "/assets/vette.webp", alt: "vette" },
-            { src: "/assets/engine-bay.webp", alt: "engine bay" },
-            { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
-            { src: "/assets/paint-correction-2.webp", alt: "paint correction" },
-            { src: "/assets/buffing.webp", alt: "buffing" },
-            { src: "/assets/bike-detailing.webp", alt: "Bike detailing" },
-            { src: "/assets/mac-truck.webp", alt: "mac truck" },
-            { src: "/assets/work-vehicles.webp", alt: "Work Vehicles" },
-            { src: "/assets/car-detailing.webp", alt: "car detailing" },
-            { src: "/assets/car-detailing-2.webp", alt: "car detailing2" },
-            { src: "/assets/car-detail-3.webp", alt: "car detail 3" },
-            { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
-            { src: "/assets/interior-detailing.webp", alt: "Interior Detailing" },
-            { src: "/assets/contact-info-photo.jpg", alt: "contact info photo" },
-          ]}
-        />
+        <Gallery shots={[...GALLERY_SHOTS]} />
 
         {/* WHY US */}
         <section className="py-16 md:py-20">
