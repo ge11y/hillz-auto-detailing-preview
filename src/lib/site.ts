@@ -163,6 +163,11 @@ export const CONTACT_PHOTO = {
   alt: "Hillz Auto Detailing business card and keys",
 } as const;
 
+export const HOME_CONTACT_PHOTO = {
+  src: "/assets/exterior-detail.webp",
+  alt: "White McLaren inside the Hillz Auto Detailing shop",
+} as const;
+
 /**
  * Real Google review quotes (Exa place library / Google Places aggregate).
  * Reviewer display names were not available from accessible scrapes — do not invent.

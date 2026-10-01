@@ -16,7 +16,7 @@ import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
 import Gallery from "@/components/Gallery";
 import ReviewsStrip from "@/components/ReviewsStrip";
-import { CONTACT_PHOTO, EMAIL, GALLERY_SHOTS, GOLDIE_BOOK, HOURS, PHONE_TEL } from "@/lib/site";
+import { EMAIL, GALLERY_SHOTS, GOLDIE_BOOK, HOME_CONTACT_PHOTO, HOURS, PHONE_TEL } from "@/lib/site";
 
 const PHONE = "603-235-0453";
 const MAPS =
@@ -331,8 +331,8 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative aspect-[4/3] w-full max-w-md rounded-2xl overflow-hidden border border-chrome bg-chrome/30">
                 <Image
-                  src={CONTACT_PHOTO.src}
-                  alt={CONTACT_PHOTO.alt}
+                  src={HOME_CONTACT_PHOTO.src}
+                  alt={HOME_CONTACT_PHOTO.alt}
                   fill
                   className="object-cover"
                   sizes="(max-width:768px) 100vw, 28rem"
