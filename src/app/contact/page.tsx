@@ -7,6 +7,7 @@ import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
 import {
   ADDRESS_LINES,
+  CONTACT_PHOTO,
   EMAIL,
   GOLDIE_BOOK,
   HOURS,
@@ -63,6 +64,16 @@ export default function ContactPage() {
         <section className="py-12 md:py-16 bg-concrete">
           <div className="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-10">
             <div className="space-y-8">
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-chrome/20 bg-white shadow-sm">
+                <Image
+                  src={CONTACT_PHOTO.src}
+                  alt={CONTACT_PHOTO.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width:1024px) 100vw, 28rem"
+                  priority
+                />
+              </div>
               <div>
                 <h2 className="font-display text-xl uppercase tracking-wide mb-3 inline-flex items-center gap-2">
                   <MapPin className="h-5 w-5 text-race" aria-hidden /> Visit
