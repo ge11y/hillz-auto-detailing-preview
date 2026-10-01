@@ -69,18 +69,56 @@ export default function HomePage() {
         <section id="services" className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="font-display text-3xl uppercase tracking-wide mb-2">Services</h2>
-            <p className="text-chrome/80 mb-8">From our Google Business Profile category.</p>
+            <p className="text-chrome/80 mb-8">Professional grade protection and detailing — contact for a quote.</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
                 <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
                   01
                 </div>
-                <h3 className="font-display text-lg uppercase tracking-wide mb-2">Car Detailing Service</h3>
-                <p className="text-sm text-chrome/80 mb-4">
-                  Professional car detailing in Hampstead, NH — as listed on Google.
+                <h3 className="font-display text-lg uppercase tracking-wide mb-2">System X Ceramic Protection</h3>
+                <p className="text-xs text-chrome/60 mb-3">System-X Ceramic Protection Max G+</p>
+                <p className="text-sm text-chrome/80 mb-3">
+                  Professional grade System X Ceramic Protection offered in 3/6/10 years.
                 </p>
-                <a href={TEL} className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Call to book →
+                <ul className="text-sm text-chrome/80 space-y-1.5 mb-4 list-disc pl-4">
+                  <li>Superior protection from elements</li>
+                  <li>High gloss, smooth finish</li>
+                  <li>Hard protective shell over your finish</li>
+                  <li>Hydrophobic, quick drying properties</li>
+                  <li>Easy 1X a year maintenance</li>
+                  <li>Lasting results that keep your finish best</li>
+                </ul>
+                <p className="text-sm text-chrome/80 mb-2">
+                  Warranty with proper care, and reporting to your vehicle&apos;s Carfax report.
+                </p>
+                <p className="text-sm text-chrome/80 mb-4">
+                  Coatings are priced with a standard prep. Contact for a quote.
+                </p>
+                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Contact for a quote →
+                </a>
+              </article>
+
+              <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
+                <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
+                  02
+                </div>
+                <h3 className="font-display text-lg uppercase tracking-wide mb-2">Paint Correction</h3>
+                <p className="text-sm text-chrome/80 mb-4">
+                  Custom paint correction to restore your vehicle&apos;s paint to its finest.
+                </p>
+                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Contact for a quote →
+                </a>
+              </article>
+
+              <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
+                <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
+                  03
+                </div>
+                <h3 className="font-display text-lg uppercase tracking-wide mb-2">Exterior Detail</h3>
+                <a href="#quote" className="text-race font-semibold text-sm hover:underline cursor-pointer">
+                  Contact us →
                 </a>
               </article>
             </div>
