@@ -77,7 +77,7 @@ export default function HomePage() {
             </div>
             <div id="quote" className="rounded-2xl bg-ink/90 border border-chrome p-6 text-white shadow-2xl">
               <h2 className="font-display text-xl uppercase tracking-wide mb-1">Free Quote</h2>
-              <p className="text-muted text-sm mb-4">Tell us about your vehicle — we&apos;ll follow up.</p>
+              <p className="text-muted text-sm mb-4">Tell us about your vehicle — add photos for a faster quote.</p>
               <QuoteForm dark />
             </div>
           </div>
