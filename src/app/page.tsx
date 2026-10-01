@@ -15,6 +15,7 @@ import {
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
+import { GOLDIE_BOOK, PHONE_TEL } from "@/lib/site";
 
 const PHONE = "603-235-0453";
 const MAPS =
@@ -61,16 +62,18 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:6032350453"
+                  href={PHONE_TEL}
                   className="inline-flex items-center gap-2 rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
                 >
                   <Phone className="h-4 w-4" aria-hidden /> Call To Schedule
                 </a>
                 <a
-                  href="#quote"
-                  className="inline-flex rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
+                  href={GOLDIE_BOOK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
                 >
-                  Get Free Quote
+                  Book Online <ExternalLink className="h-4 w-4" aria-hidden />
                 </a>
               </div>
             </div>
@@ -382,8 +385,13 @@ export default function HomePage() {
               <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 text-concrete text-sm mt-2 hover:text-yellow hover:underline cursor-pointer">
                 <Mail className="h-4 w-4" aria-hidden /> {EMAIL}
               </a>
-              <a href="#quote" className="inline-flex mt-4 rounded-lg bg-yellow text-ink font-semibold px-4 py-2 text-sm hover:brightness-110 cursor-pointer">
-                Get Free Quote
+              <a
+                href={GOLDIE_BOOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex mt-4 rounded-lg bg-yellow text-ink font-semibold px-4 py-2 text-sm hover:brightness-110 cursor-pointer"
+              >
+                Book Online
               </a>
             </div>
           </div>

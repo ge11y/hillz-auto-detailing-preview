@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Phone, ArrowRight, Shield } from "lucide-react";
+import { ExternalLink, Phone, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
+import { GOLDIE_BOOK, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "System X Ceramic Protection | Hillz Auto Detailing",
   description: "Professional grade System X Ceramic Protection — Hampstead, NH",
   robots: { index: false, follow: false },
 };
-
-const PHONE = "603-235-0453";
 
 type Product = {
   name: string;
@@ -119,17 +118,19 @@ export default function SystemXPage() {
             </p>
             <div className="flex flex-wrap gap-3 items-center">
               <a
-                href="tel:6032350453"
+                href={PHONE_TEL}
                 className="inline-flex items-center gap-2 rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
               >
-                <Phone className="h-4 w-4" aria-hidden /> Call {PHONE}
+                <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
-              <Link
-                href="/#quote"
+              <a
+                href={GOLDIE_BOOK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
               >
-                Get Free Quote <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+                Book Online <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
               <a
                 href="https://www.systemx.com/"
                 target="_blank"
@@ -227,17 +228,19 @@ export default function SystemXPage() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href="tel:6032350453"
+                href={PHONE_TEL}
                 className="inline-flex items-center gap-2 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
               >
-                <Phone className="h-4 w-4" aria-hidden /> Call {PHONE}
+                <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
-              <Link
-                href="/#quote"
+              <a
+                href={GOLDIE_BOOK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
               >
-                Get Free Quote
-              </Link>
+                Book Online
+              </a>
               <a
                 href="https://www.systemx.com/"
                 target="_blank"
@@ -262,8 +265,8 @@ export default function SystemXPage() {
             <div className="text-xs text-muted">
               Preview only · Not indexed · © Hillz Auto Detailing LLC
               <div className="mt-1 flex flex-wrap gap-3">
-                <a href="tel:6032350453" className="text-yellow hover:underline">
-                  {PHONE}
+                <a href={PHONE_TEL} className="text-yellow hover:underline">
+                  {PHONE_DISPLAY}
                 </a>
                 <Link href="/privacy" className="text-concrete hover:text-yellow hover:underline">
                   Privacy

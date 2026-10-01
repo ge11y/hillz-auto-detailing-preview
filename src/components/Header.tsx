@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Phone } from "lucide-react";
-
-const PHONE = "603-235-0453";
+import { GOLDIE_BOOK, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 const SERVICE_LINKS = [
   { href: "/#services", label: "Overview" },
   { href: "/services/system-x-ceramic-protection", label: "System X Ceramic Protection" },
@@ -83,18 +82,20 @@ export default function Header() {
           </Link>
         </nav>
         <div className="ml-auto flex items-center gap-2 shrink-0">
-          <Link
-            href="/#quote"
+          <a
+            href={GOLDIE_BOOK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg bg-yellow text-ink font-semibold text-sm px-3 py-2 whitespace-nowrap hover:brightness-110 cursor-pointer"
           >
-            Get Free Quote
-          </Link>
+            Book Online
+          </a>
           <a
-            href="tel:6032350453"
+            href={PHONE_TEL}
             className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-race text-white text-sm px-3 py-2 whitespace-nowrap hover:bg-race/20 cursor-pointer"
           >
             <Phone className="h-3.5 w-3.5" aria-hidden />
-            {PHONE}
+            {PHONE_DISPLAY}
           </a>
         </div>
       </div>
