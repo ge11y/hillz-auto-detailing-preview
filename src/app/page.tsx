@@ -53,15 +53,18 @@ export default function HomePage() {
                 Hillz Auto Detailing LLC
               </h1>
               <p className="mt-3 text-xl text-yellow font-semibold">Ready to treat yourself?</p>
-              <p className="mt-3 text-lg text-concrete max-w-md">
-                Car detailing service in Hampstead, NH. Women-owned. 4.8★ from 17 Google reviews.
+              <p className="mt-4 text-lg md:text-xl text-white max-w-xl leading-snug">
+                We do everything to get your car, plane, RV or Boat ready to show off!
+              </p>
+              <p className="mt-3 text-sm text-concrete max-w-md">
+                Hampstead, NH · Women-owned · 4.8★ from 17 Google reviews
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="tel:6032350453"
                   className="inline-flex items-center gap-2 rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
                 >
-                  <Phone className="h-4 w-4" aria-hidden /> Call {PHONE}
+                  <Phone className="h-4 w-4" aria-hidden /> Call To Schedule
                 </a>
                 <a
                   href="#quote"
@@ -75,6 +78,56 @@ export default function HomePage() {
               <h2 className="font-display text-xl uppercase tracking-wide mb-1">Free Quote</h2>
               <p className="text-muted text-sm mb-4">Tell us about your vehicle — we&apos;ll follow up.</p>
               <QuoteForm dark />
+            </div>
+          </div>
+        </section>
+
+        {/* SYSTEM X — Protection with a Glow */}
+        <section id="protection" className="py-16 md:py-20 bg-ink text-white">
+          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-chrome">
+              <Image
+                src="/assets/services/system-x-ceramic.webp"
+                alt="System X Ceramic Protection"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-2 text-yellow mb-3">
+                <Shield className="h-5 w-5" aria-hidden />
+                <span className="text-xs uppercase tracking-widest font-semibold">System X</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wide leading-tight">
+                Protection with a Glow
+              </h2>
+              <p className="mt-2 text-xl text-yellow font-semibold">The Ultimate Permanent Coating</p>
+              <p className="mt-4 text-concrete leading-relaxed">
+                A lifetime of high gloss ceramic protection. Automotive ceramic coatings impart a
+                color-enhancing gloss while protecting exterior surfaces for the life of your car.
+              </p>
+              <p className="mt-4 text-concrete leading-relaxed">
+                System X creates a brilliant new clear coat over your paintwork — appearing as if
+                your car was dipped in glass. Ultra hydrophobic, slicker, and glossier than the
+                original clear coat.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/services/system-x-ceramic-protection"
+                  className="inline-flex items-center gap-2 rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
+                >
+                  See System X <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+                <a
+                  href="https://www.systemx.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
+                >
+                  systemx.com <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </a>
+              </div>
             </div>
           </div>
         </section>
