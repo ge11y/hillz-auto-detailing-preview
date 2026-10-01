@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ExternalLink, Shield } from "lucide-react";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
@@ -7,15 +8,26 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const RELATED = [
+  { src: "/assets/services/system-x-ceramic.webp", alt: "system x ceramic" },
+  { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
+  { src: "/assets/buffing.webp", alt: "buffing" },
+  { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
+  { src: "/assets/vette.webp", alt: "vette" },
+  { src: "/assets/car-detailing.webp", alt: "car detailing" },
+];
+
 export default function SystemXPage() {
   return (
     <ServicePage
       title="System X Ceramic Protection"
       heroSrc="/assets/services/system-x-ceramic.webp"
+      related={RELATED}
     >
-      <p className="text-xs text-chrome/60 mb-4 uppercase tracking-wide">
-        System-X Ceramic Protection Max G+
-      </p>
+      <div className="inline-flex items-center gap-2 text-race mb-4">
+        <Shield className="h-5 w-5" aria-hidden />
+        <span className="text-xs uppercase tracking-wide font-semibold">System-X Ceramic Protection Max G+</span>
+      </div>
       <p className="text-chrome/90 mb-4">
         Professional grade System X Ceramic Protection offered in 3/6/10 years.
       </p>
@@ -36,9 +48,9 @@ export default function SystemXPage() {
           href="https://www.systemx.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-race font-semibold hover:underline"
+          className="inline-flex items-center gap-1.5 text-race font-semibold hover:underline"
         >
-          systemx.com
+          systemx.com <ExternalLink className="h-3.5 w-3.5" aria-hidden />
         </a>
       </p>
     </ServicePage>

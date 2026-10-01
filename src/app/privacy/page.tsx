@@ -101,11 +101,11 @@ export default function PrivacyPage() {
         <footer className="bg-ink text-white py-8">
           <div className="mx-auto max-w-6xl px-4 flex flex-wrap items-center gap-4">
             <Image
-              src="/assets/logo.webp"
+              src="/assets/logo.png"
               alt="Hillz Auto Detailing"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain rounded-md bg-white/5"
+              width={120}
+              height={57}
+              className="h-12 w-auto object-contain"
             />
             <div className="text-xs text-muted">
               Preview only · Not indexed · © Hillz Auto Detailing LLC

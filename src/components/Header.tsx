@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { Phone } from "lucide-react";
 
 const PHONE = "603-235-0453";
 const SERVICE_LINKS = [
@@ -29,18 +30,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-ink/95 backdrop-blur border-b border-chrome text-white">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-3">
-        <Link href="/#home" className="flex items-center gap-2.5 shrink-0 min-w-0">
+        <Link href="/#home" className="flex items-center shrink-0">
           <Image
-            src="/assets/logo.webp"
+            src="/assets/logo.png"
             alt="Hillz Auto Detailing"
-            width={44}
-            height={44}
-            className="h-10 w-10 object-contain rounded-md bg-white/5"
+            width={168}
+            height={80}
+            className="h-10 md:h-11 w-auto object-contain"
             priority
           />
-          <span className="font-display text-sm md:text-base uppercase tracking-wide whitespace-nowrap truncate">
-            Hillz Auto Detailing
-          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-5 text-sm text-muted ml-2">
           <Link href="/#home" className="hover:text-white whitespace-nowrap">
@@ -93,8 +91,9 @@ export default function Header() {
           </Link>
           <a
             href="tel:6032350453"
-            className="inline-flex items-center justify-center rounded-lg border border-race text-white text-sm px-3 py-2 whitespace-nowrap hover:bg-race/20 cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-race text-white text-sm px-3 py-2 whitespace-nowrap hover:bg-race/20 cursor-pointer"
           >
+            <Phone className="h-3.5 w-3.5" aria-hidden />
             {PHONE}
           </a>
         </div>

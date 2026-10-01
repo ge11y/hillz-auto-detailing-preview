@@ -1,5 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Shield,
+  Sparkles,
+  Droplets,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Images,
+  ArrowRight,
+  ExternalLink,
+} from "lucide-react";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
@@ -47,9 +59,9 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="tel:6032350453"
-                  className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
                 >
-                  Call {PHONE}
+                  <Phone className="h-4 w-4" aria-hidden /> Call {PHONE}
                 </a>
                 <a
                   href="#quote"
@@ -70,110 +82,108 @@ export default function HomePage() {
         {/* SERVICES */}
         <section id="services" className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4">
-            <h2 className="font-display text-3xl uppercase tracking-wide mb-2">Services</h2>
+            <div className="flex items-center gap-3 mb-2">
+              <Sparkles className="h-6 w-6 text-race" aria-hidden />
+              <h2 className="font-display text-3xl uppercase tracking-wide">Services</h2>
+            </div>
             <p className="text-chrome/80 mb-8">Professional grade protection and detailing — contact for a quote.</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
-                <Link href="/services/system-x-ceramic-protection" className="relative block aspect-[16/10] overflow-hidden group">
-                  <Image
-                    src="/assets/services/system-x-ceramic.webp"
-                    alt="System X Ceramic Protection"
-                    fill
-                    className="object-cover transition-transform duration-200 group-hover:scale-105"
-                    sizes="(max-width:768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
-                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+              <Link
+                href="/services/system-x-ceramic-protection"
+                className="group relative block rounded-2xl overflow-hidden border border-concrete shadow-sm aspect-[4/3] bg-ink"
+              >
+                <Image
+                  src="/assets/services/system-x-ceramic.webp"
+                  alt="System X Ceramic Protection"
+                  fill
+                  className="object-cover transition-transform duration-200 group-hover:scale-105"
+                  sizes="(max-width:768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
+                <div className="absolute top-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-yellow text-ink">
+                  <Shield className="h-5 w-5" aria-hidden />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-display text-lg md:text-xl uppercase tracking-wide text-white leading-snug">
                     System X Ceramic Protection
                   </h3>
-                </Link>
-                <div className="p-5 flex flex-col flex-1">
-                  <p className="text-xs text-chrome/60 mb-3">System-X Ceramic Protection Max G+</p>
-                  <p className="text-sm text-chrome/80 mb-3">
-                    Professional grade System X Ceramic Protection offered in 3/6/10 years.
-                  </p>
-                  <ul className="text-sm text-chrome/80 space-y-1.5 mb-4 list-disc pl-4">
-                    <li>Superior protection from elements</li>
-                    <li>High gloss, smooth finish</li>
-                    <li>Hard protective shell over your finish</li>
-                    <li>Hydrophobic, quick drying properties</li>
-                    <li>Easy 1X a year maintenance</li>
-                    <li>Lasting results that keep your finish best</li>
-                  </ul>
-                  <p className="text-sm text-chrome/80 mb-2">
-                    Warranty with proper care, and reporting to your vehicle&apos;s Carfax report.
-                  </p>
-                  <p className="text-sm text-chrome/80 mb-4">
-                    Coatings are priced with a standard prep. Contact for a quote.
-                  </p>
-                  <p className="text-sm text-chrome/80 mb-4">
-                    <a
-                      href="https://www.systemx.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-race font-semibold hover:underline cursor-pointer"
-                    >
-                      systemx.com
-                    </a>
-                  </p>
-                  <Link href="/services/system-x-ceramic-protection" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
-                    Learn more →
-                  </Link>
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-yellow">
+                    Learn more <ArrowRight className="h-4 w-4" aria-hidden />
+                  </span>
                 </div>
-              </article>
+              </Link>
 
-              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
-                <Link href="/services/paint-correction" className="relative block aspect-[16/10] overflow-hidden group">
-                  <Image
-                    src="/assets/services/paint-correction.webp"
-                    alt="Paint Correction"
-                    fill
-                    className="object-cover transition-transform duration-200 group-hover:scale-105"
-                    sizes="(max-width:768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
-                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+              <Link
+                href="/services/paint-correction"
+                className="group relative block rounded-2xl overflow-hidden border border-concrete shadow-sm aspect-[4/3] bg-ink"
+              >
+                <Image
+                  src="/assets/services/paint-correction.webp"
+                  alt="Paint Correction"
+                  fill
+                  className="object-cover transition-transform duration-200 group-hover:scale-105"
+                  sizes="(max-width:768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
+                <div className="absolute top-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-race text-white">
+                  <Sparkles className="h-5 w-5" aria-hidden />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-display text-lg md:text-xl uppercase tracking-wide text-white leading-snug">
                     Paint Correction
                   </h3>
-                </Link>
-                <div className="p-5 flex flex-col flex-1">
-                  <p className="text-sm text-chrome/80 mb-4">
-                    Custom paint correction to restore your vehicle&apos;s paint to its finest.
-                  </p>
-                  <Link href="/services/paint-correction" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
-                    Learn more →
-                  </Link>
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-yellow">
+                    Learn more <ArrowRight className="h-4 w-4" aria-hidden />
+                  </span>
                 </div>
-              </article>
+              </Link>
 
-              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
-                <Link href="/services/exterior-detail" className="relative block aspect-[16/10] overflow-hidden group">
-                  <Image
-                    src="/assets/services/exterior-detail.webp"
-                    alt="Exterior Detail"
-                    fill
-                    className="object-cover transition-transform duration-200 group-hover:scale-105"
-                    sizes="(max-width:768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
-                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+              <Link
+                href="/services/exterior-detail"
+                className="group relative block rounded-2xl overflow-hidden border border-concrete shadow-sm aspect-[4/3] bg-ink"
+              >
+                <Image
+                  src="/assets/services/exterior-detail.webp"
+                  alt="Exterior Detail"
+                  fill
+                  className="object-cover transition-transform duration-200 group-hover:scale-105"
+                  sizes="(max-width:768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
+                <div className="absolute top-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-yellow text-ink">
+                  <Droplets className="h-5 w-5" aria-hidden />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-display text-lg md:text-xl uppercase tracking-wide text-white leading-snug">
                     Exterior Detail
                   </h3>
-                </Link>
-                <div className="p-5 flex flex-col flex-1">
-                  <Link href="/services/exterior-detail" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
-                    Learn more →
-                  </Link>
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-yellow">
+                    Learn more <ArrowRight className="h-4 w-4" aria-hidden />
+                  </span>
                 </div>
-              </article>
+              </Link>
             </div>
+            <p className="mt-4 text-sm text-chrome/70">
+              System X product info:{" "}
+              <a
+                href="https://www.systemx.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-race font-semibold hover:underline"
+              >
+                systemx.com <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
+            </p>
           </div>
         </section>
 
         {/* GALLERY */}
         <section id="gallery" className="py-16 bg-ink text-white">
           <div className="mx-auto max-w-6xl px-4">
-            <h2 className="font-display text-3xl uppercase tracking-wide mb-2">Gallery</h2>
+            <div className="flex items-center gap-3 mb-2">
+              <Images className="h-6 w-6 text-yellow" aria-hidden />
+              <h2 className="font-display text-3xl uppercase tracking-wide">Gallery</h2>
+            </div>
             <p className="text-muted mb-8">Real job photos from Hillz Auto Detailing.</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {[
@@ -254,12 +264,15 @@ export default function HomePage() {
         {/* SERVICE AREAS */}
         <section id="areas" className="py-16">
           <div className="mx-auto max-w-6xl px-4">
-            <h2 className="font-display text-3xl uppercase tracking-wide mb-4">Service Areas</h2>
+            <div className="flex items-center gap-3 mb-4">
+              <MapPin className="h-6 w-6 text-race" aria-hidden />
+              <h2 className="font-display text-3xl uppercase tracking-wide">Service Areas</h2>
+            </div>
             <p className="text-chrome/80 max-w-xl">
               Based in <strong>Hampstead, NH</strong> at 4 Owens Ct unit 6. Call to confirm availability for your vehicle.
             </p>
-            <a href="tel:6032350453" className="inline-flex mt-6 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer">
-              Call {PHONE}
+            <a href="tel:6032350453" className="inline-flex items-center gap-2 mt-6 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer">
+              <Phone className="h-4 w-4" aria-hidden /> Call {PHONE}
             </a>
           </div>
         </section>
@@ -269,11 +282,11 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
               <Image
-                src="/assets/logo.webp"
+                src="/assets/logo.png"
                 alt="Hillz Auto Detailing"
-                width={56}
-                height={56}
-                className="h-14 w-14 object-contain rounded-md bg-white/5 mb-3"
+                width={140}
+                height={67}
+                className="h-14 w-auto object-contain"
               />
               <h3 className="font-display uppercase tracking-wide mb-3">Hillz Auto Detailing LLC</h3>
               <p className="text-muted text-sm">Car detailing service · Hampstead, NH</p>
@@ -281,7 +294,9 @@ export default function HomePage() {
               <p className="text-yellow text-sm mt-3">Ready to treat yourself?</p>
             </div>
             <div>
-              <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Visit</h3>
+              <h3 className="font-display uppercase tracking-wide mb-3 text-sm inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-yellow" aria-hidden /> Visit
+              </h3>
               <p className="text-sm text-concrete">
                 4 Owens Ct unit 6<br />
                 Hampstead, NH, USA
@@ -291,7 +306,9 @@ export default function HomePage() {
               </a>
             </div>
             <div>
-              <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Hours</h3>
+              <h3 className="font-display uppercase tracking-wide mb-3 text-sm inline-flex items-center gap-2">
+                <Clock className="h-4 w-4 text-yellow" aria-hidden /> Hours
+              </h3>
               <ul className="text-sm text-muted space-y-1">
                 {HOURS.map(([d, h]) => (
                   <li key={d} className="flex justify-between gap-4 max-w-[220px]">
@@ -303,12 +320,14 @@ export default function HomePage() {
               <p className="text-xs text-muted mt-3">Closed on major holidays</p>
             </div>
             <div>
-              <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Contact</h3>
-              <a href="tel:6032350453" className="block text-yellow font-semibold hover:underline cursor-pointer">
-                {PHONE}
+              <h3 className="font-display uppercase tracking-wide mb-3 text-sm inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 text-yellow" aria-hidden /> Contact
+              </h3>
+              <a href="tel:6032350453" className="inline-flex items-center gap-2 text-yellow font-semibold hover:underline cursor-pointer">
+                <Phone className="h-4 w-4" aria-hidden /> {PHONE}
               </a>
-              <a href={`mailto:${EMAIL}`} className="block text-concrete text-sm mt-2 hover:text-yellow hover:underline cursor-pointer">
-                {EMAIL}
+              <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 text-concrete text-sm mt-2 hover:text-yellow hover:underline cursor-pointer">
+                <Mail className="h-4 w-4" aria-hidden /> {EMAIL}
               </a>
               <a href="#quote" className="inline-flex mt-4 rounded-lg bg-yellow text-ink font-semibold px-4 py-2 text-sm hover:brightness-110 cursor-pointer">
                 Get Free Quote
