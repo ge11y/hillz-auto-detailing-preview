@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ExternalLink, Phone, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
-import { GOLDIE_BOOK, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { GOLDIE_BOOK_SYSTEM_X, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "System X Ceramic Protection | Hillz Auto Detailing",
@@ -124,7 +124,7 @@ export default function SystemXPage() {
                 <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
               <a
-                href={GOLDIE_BOOK}
+                href={GOLDIE_BOOK_SYSTEM_X}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
@@ -234,7 +234,7 @@ export default function SystemXPage() {
                 <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
               <a
-                href={GOLDIE_BOOK}
+                href={GOLDIE_BOOK_SYSTEM_X}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"

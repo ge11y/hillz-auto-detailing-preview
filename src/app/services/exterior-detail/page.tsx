@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Droplets } from "lucide-react";
 import ServicePage from "@/components/ServicePage";
+import { GOLDIE_BOOK_EXTERIOR } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Exterior Detail | Hillz Auto Detailing",
@@ -20,7 +21,12 @@ const RELATED = [
 
 export default function ExteriorDetailPage() {
   return (
-    <ServicePage title="Exterior Detail" heroSrc="/assets/services/exterior-detail.webp" related={RELATED}>
+    <ServicePage
+      title="Exterior Detail"
+      heroSrc="/assets/services/exterior-detail.webp"
+      bookHref={GOLDIE_BOOK_EXTERIOR}
+      related={RELATED}
+    >
       <div className="inline-flex items-center gap-2 text-race mb-4">
         <Droplets className="h-5 w-5" aria-hidden />
         <span className="text-xs uppercase tracking-wide font-semibold">Exterior Detail</span>

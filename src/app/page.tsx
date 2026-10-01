@@ -8,13 +8,13 @@ import {
   Mail,
   MapPin,
   Clock,
-  Images,
   ArrowRight,
   ExternalLink,
 } from "lucide-react";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
+import Gallery from "@/components/Gallery";
 import { GOLDIE_BOOK, PHONE_TEL } from "@/lib/site";
 
 const PHONE = "603-235-0453";
@@ -174,8 +174,8 @@ export default function HomePage() {
                 className="group relative block rounded-2xl overflow-hidden border border-concrete shadow-sm aspect-[4/3] bg-ink"
               >
                 <Image
-                  src="/assets/services/paint-correction.webp"
-                  alt="Paint Correction"
+                  src="/assets/paint-correction-hero.webp"
+                  alt="Paint Correction before and after"
                   fill
                   className="object-cover transition-transform duration-200 group-hover:scale-105"
                   sizes="(max-width:768px) 100vw, 33vw"
@@ -233,41 +233,27 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* GALLERY */}
-        <section id="gallery" className="py-16 bg-ink text-white">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="flex items-center gap-3 mb-2">
-              <Images className="h-6 w-6 text-yellow" aria-hidden />
-              <h2 className="font-display text-3xl uppercase tracking-wide">Gallery</h2>
-            </div>
-            <p className="text-muted mb-8">Real job photos from Hillz Auto Detailing.</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {[
-                { src: "/assets/truck.webp", alt: "truck" },
-                { src: "/assets/truck.jpg", alt: "truck" },
-                { src: "/assets/truck-and-plane.jpg", alt: "truck and plane" },
-                { src: "/assets/vette.webp", alt: "vette" },
-                { src: "/assets/engine-bay.webp", alt: "engine bay" },
-                { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
-                { src: "/assets/paint-correction-2.webp", alt: "paint correction" },
-                { src: "/assets/buffing.webp", alt: "buffing" },
-                { src: "/assets/bike-detailing.webp", alt: "Bike detailing" },
-                { src: "/assets/mac-truck.webp", alt: "mac truck" },
-                { src: "/assets/work-vehicles.webp", alt: "Work Vehicles" },
-                { src: "/assets/car-detailing.webp", alt: "car detailing" },
-                { src: "/assets/car-detailing-2.webp", alt: "car detailing2" },
-                { src: "/assets/car-detail-3.webp", alt: "car detail 3" },
-                { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
-                { src: "/assets/interior-detailing.webp", alt: "Interior Detailing" },
-                { src: "/assets/contact-info-photo.jpg", alt: "contact info photo" },
-              ].map((shot) => (
-                <div key={shot.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-chrome">
-                  <Image src={shot.src} alt={shot.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Gallery
+          shots={[
+            { src: "/assets/truck.webp", alt: "truck" },
+            { src: "/assets/truck.jpg", alt: "truck" },
+            { src: "/assets/truck-and-plane.jpg", alt: "truck and plane" },
+            { src: "/assets/vette.webp", alt: "vette" },
+            { src: "/assets/engine-bay.webp", alt: "engine bay" },
+            { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
+            { src: "/assets/paint-correction-2.webp", alt: "paint correction" },
+            { src: "/assets/buffing.webp", alt: "buffing" },
+            { src: "/assets/bike-detailing.webp", alt: "Bike detailing" },
+            { src: "/assets/mac-truck.webp", alt: "mac truck" },
+            { src: "/assets/work-vehicles.webp", alt: "Work Vehicles" },
+            { src: "/assets/car-detailing.webp", alt: "car detailing" },
+            { src: "/assets/car-detailing-2.webp", alt: "car detailing2" },
+            { src: "/assets/car-detail-3.webp", alt: "car detail 3" },
+            { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
+            { src: "/assets/interior-detailing.webp", alt: "Interior Detailing" },
+            { src: "/assets/contact-info-photo.jpg", alt: "contact info photo" },
+          ]}
+        />
 
         {/* WHY US */}
         <section className="py-16 md:py-20">

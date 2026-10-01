@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sparkles } from "lucide-react";
 import ServicePage from "@/components/ServicePage";
+import { GOLDIE_BOOK_PAINT } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Paint Correction | Hillz Auto Detailing",
@@ -19,7 +20,12 @@ const RELATED = [
 
 export default function PaintCorrectionPage() {
   return (
-    <ServicePage title="Paint Correction" heroSrc="/assets/paint-correction-hero.webp" related={RELATED}>
+    <ServicePage
+      title="Paint Correction"
+      heroSrc="/assets/paint-correction-hero.webp"
+      bookHref={GOLDIE_BOOK_PAINT}
+      related={RELATED}
+    >
       <div className="inline-flex items-center gap-2 text-race mb-4">
         <Sparkles className="h-5 w-5" aria-hidden />
         <span className="text-xs uppercase tracking-wide font-semibold">Paint Correction</span>

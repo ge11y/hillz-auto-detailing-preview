@@ -10,11 +10,19 @@ type Shot = { src: string; alt: string };
 type Props = {
   title: string;
   heroSrc: string;
+  /** Per-service Goldie checkout URL; defaults to catalog #services */
+  bookHref?: string;
   related?: Shot[];
   children: React.ReactNode;
 };
 
-export default function ServicePage({ title, heroSrc, related = [], children }: Props) {
+export default function ServicePage({
+  title,
+  heroSrc,
+  bookHref = GOLDIE_BOOK,
+  related = [],
+  children,
+}: Props) {
   return (
     <>
       <Header />
@@ -49,7 +57,7 @@ export default function ServicePage({ title, heroSrc, related = [], children }: 
                 <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
               <a
-                href={GOLDIE_BOOK}
+                href={bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/40 text-white px-5 py-3 hover:bg-white/10 cursor-pointer"
@@ -102,7 +110,7 @@ export default function ServicePage({ title, heroSrc, related = [], children }: 
                 <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
               </a>
               <a
-                href={GOLDIE_BOOK}
+                href={bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
