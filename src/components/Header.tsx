@@ -1,11 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 const PHONE = "603-235-0453";
-const TEL = "tel:6032350453";
-
 const SERVICE_LINKS = [
   { href: "/#services", label: "Overview" },
   { href: "/services/system-x-ceramic-protection", label: "System X Ceramic Protection" },
@@ -29,14 +28,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-ink/95 backdrop-blur border-b border-chrome text-white">
-      <div className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-4">
-        <Link
-          href="/#home"
-          className="font-display text-sm md:text-base uppercase tracking-wide whitespace-nowrap shrink-0"
-        >
-          Hillz Auto Detailing
+      <div className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-3">
+        <Link href="/#home" className="flex items-center gap-2.5 shrink-0 min-w-0">
+          <Image
+            src="/assets/logo.webp"
+            alt="Hillz Auto Detailing"
+            width={44}
+            height={44}
+            className="h-10 w-10 object-contain rounded-md bg-white/5"
+            priority
+          />
+          <span className="font-display text-sm md:text-base uppercase tracking-wide whitespace-nowrap truncate">
+            Hillz Auto Detailing
+          </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-5 text-sm text-muted ml-4">
+        <nav className="hidden lg:flex items-center gap-5 text-sm text-muted ml-2">
           <Link href="/#home" className="hover:text-white whitespace-nowrap">
             Home
           </Link>
@@ -86,7 +92,7 @@ export default function Header() {
             Get Free Quote
           </Link>
           <a
-            href={TEL}
+            href="tel:6032350453"
             className="inline-flex items-center justify-center rounded-lg border border-race text-white text-sm px-3 py-2 whitespace-nowrap hover:bg-race/20 cursor-pointer"
           >
             {PHONE}

@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import MobileCallBar from "@/components/MobileCallBar";
 
 const PHONE = "603-235-0453";
-const TEL = "tel:6032350453";
 
 type Props = {
   title: string;
@@ -29,7 +29,7 @@ export default function ServicePage({ title, children }: Props) {
             </h1>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={TEL}
+                href="tel:6032350453"
                 className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
               >
                 Call {PHONE}
@@ -56,7 +56,7 @@ export default function ServicePage({ title, children }: Props) {
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href={TEL}
+                href="tel:6032350453"
                 className="inline-flex rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
               >
                 Call {PHONE}
@@ -72,8 +72,22 @@ export default function ServicePage({ title, children }: Props) {
         </section>
 
         <footer className="bg-ink text-white py-8">
-          <div className="mx-auto max-w-6xl px-4 text-xs text-muted">
-            Preview only · Not indexed · © Hillz Auto Detailing LLC
+          <div className="mx-auto max-w-6xl px-4 flex flex-wrap items-center gap-4">
+            <Image
+              src="/assets/logo.webp"
+              alt="Hillz Auto Detailing"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain rounded-md bg-white/5"
+            />
+            <div className="text-xs text-muted">
+              Preview only · Not indexed · © Hillz Auto Detailing LLC
+              <div className="mt-1">
+                <a href="tel:6032350453" className="text-yellow hover:underline">
+                  {PHONE}
+                </a>
+              </div>
+            </div>
           </div>
         </footer>
       </main>

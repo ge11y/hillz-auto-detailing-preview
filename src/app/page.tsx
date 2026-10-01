@@ -5,7 +5,6 @@ import MobileCallBar from "@/components/MobileCallBar";
 import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "603-235-0453";
-const TEL = "tel:6032350453";
 const MAPS =
   "https://www.google.com/maps/place/?q=place_id:ChIJHzlrNPGr44kRDMT2WsqFQD8";
 
@@ -47,7 +46,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={TEL}
+                  href="tel:6032350453"
                   className="inline-flex rounded-lg bg-yellow text-ink font-semibold px-5 py-3 hover:brightness-110 cursor-pointer"
                 >
                   Call {PHONE}
@@ -136,10 +135,13 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {[
                 { src: "/assets/truck.webp", alt: "truck" },
+                { src: "/assets/truck.jpg", alt: "truck" },
+                { src: "/assets/truck-and-plane.jpg", alt: "truck and plane" },
                 { src: "/assets/vette.webp", alt: "vette" },
                 { src: "/assets/engine-bay.webp", alt: "engine bay" },
                 { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
                 { src: "/assets/paint-correction-2.webp", alt: "paint correction" },
+                { src: "/assets/buffing.webp", alt: "buffing" },
                 { src: "/assets/bike-detailing.webp", alt: "Bike detailing" },
                 { src: "/assets/mac-truck.webp", alt: "mac truck" },
                 { src: "/assets/work-vehicles.webp", alt: "Work Vehicles" },
@@ -148,7 +150,7 @@ export default function HomePage() {
                 { src: "/assets/car-detail-3.webp", alt: "car detail 3" },
                 { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
                 { src: "/assets/interior-detailing.webp", alt: "Interior Detailing" },
-                { src: "/assets/hillz-auto-detailing.webp", alt: "Hillz Auto detailing" },
+                { src: "/assets/contact-info-photo.jpg", alt: "contact info photo" },
               ].map((shot) => (
                 <div key={shot.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-chrome">
                   <Image src={shot.src} alt={shot.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw" />
@@ -213,7 +215,7 @@ export default function HomePage() {
             <p className="text-chrome/80 max-w-xl">
               Based in <strong>Hampstead, NH</strong> at 4 Owens Ct unit 6. Call to confirm availability for your vehicle.
             </p>
-            <a href={TEL} className="inline-flex mt-6 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer">
+            <a href="tel:6032350453" className="inline-flex mt-6 rounded-lg bg-race text-white font-semibold px-5 py-3 hover:brightness-110 cursor-pointer">
               Call {PHONE}
             </a>
           </div>
@@ -223,6 +225,13 @@ export default function HomePage() {
         <footer id="contact" className="bg-ink text-white pt-16 pb-10">
           <div className="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
+              <Image
+                src="/assets/logo.webp"
+                alt="Hillz Auto Detailing"
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain rounded-md bg-white/5 mb-3"
+              />
               <h3 className="font-display uppercase tracking-wide mb-3">Hillz Auto Detailing LLC</h3>
               <p className="text-muted text-sm">Car detailing service · Hampstead, NH</p>
               <p className="text-muted text-sm mt-2">Women-owned</p>
@@ -252,7 +261,7 @@ export default function HomePage() {
             </div>
             <div>
               <h3 className="font-display uppercase tracking-wide mb-3 text-sm">Contact</h3>
-              <a href={TEL} className="block text-yellow font-semibold hover:underline cursor-pointer">
+              <a href="tel:6032350453" className="block text-yellow font-semibold hover:underline cursor-pointer">
                 {PHONE}
               </a>
               <a href={`mailto:${EMAIL}`} className="block text-concrete text-sm mt-2 hover:text-yellow hover:underline cursor-pointer">

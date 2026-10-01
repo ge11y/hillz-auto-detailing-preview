@@ -68,7 +68,13 @@ export default function QuoteForm({ dark = true }: { dark?: boolean }) {
       </button>
       {status === "ok" && <p className="text-sm text-green-400">Thanks — we got your request.</p>}
       {status === "err" && (
-        <p className="text-sm text-red-400">Something went wrong. Call 603-235-0453.</p>
+        <p className="text-sm text-red-400">
+          Something went wrong.{" "}
+          <a href="tel:6032350453" className="underline hover:text-yellow">
+            Call 603-235-0453
+          </a>
+          .
+        </p>
       )}
     </form>
   );
