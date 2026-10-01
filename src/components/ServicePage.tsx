@@ -7,16 +7,23 @@ const PHONE = "603-235-0453";
 
 type Props = {
   title: string;
+  heroSrc?: string;
   children: React.ReactNode;
 };
 
-export default function ServicePage({ title, children }: Props) {
+export default function ServicePage({ title, heroSrc, children }: Props) {
   return (
     <>
       <Header />
       <main className="pb-24 md:pb-0">
-        <section className="bg-ink text-white py-14 md:py-20">
-          <div className="mx-auto max-w-6xl px-4">
+        <section className="relative bg-ink text-white overflow-hidden">
+          {heroSrc && (
+            <div className="absolute inset-0">
+              <Image src={heroSrc} alt="" fill className="object-cover opacity-40" sizes="100vw" priority />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/70" />
+            </div>
+          )}
+          <div className="relative mx-auto max-w-6xl px-4 py-14 md:py-20">
             <p className="text-sm text-muted mb-2">
               <Link href="/#services" className="hover:text-white">
                 Services
@@ -24,7 +31,7 @@ export default function ServicePage({ title, children }: Props) {
               <span className="mx-2 opacity-50">/</span>
               <span>{title}</span>
             </p>
-            <h1 className="font-display text-3xl md:text-5xl uppercase tracking-wide leading-tight">
+            <h1 className="font-display text-3xl md:text-5xl uppercase tracking-wide leading-tight max-w-3xl">
               {title}
             </h1>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -82,10 +89,13 @@ export default function ServicePage({ title, children }: Props) {
             />
             <div className="text-xs text-muted">
               Preview only · Not indexed · © Hillz Auto Detailing LLC
-              <div className="mt-1">
+              <div className="mt-1 flex flex-wrap gap-3">
                 <a href="tel:6032350453" className="text-yellow hover:underline">
                   {PHONE}
                 </a>
+                <Link href="/privacy" className="text-concrete hover:text-yellow hover:underline">
+                  Privacy
+                </Link>
               </div>
             </div>
           </div>

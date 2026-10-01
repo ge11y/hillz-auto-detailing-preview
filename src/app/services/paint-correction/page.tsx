@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PaintCorrectionPage() {
   return (
-    <ServicePage title="Paint Correction">
+    <ServicePage title="Paint Correction" heroSrc="/assets/services/paint-correction.webp">
       <p className="text-chrome/90">
         Custom paint correction to restore your vehicle&apos;s paint to its finest.
       </p>

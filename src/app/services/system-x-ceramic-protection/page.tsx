@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 
 export default function SystemXPage() {
   return (
-    <ServicePage title="System X Ceramic Protection">
+    <ServicePage
+      title="System X Ceramic Protection"
+      heroSrc="/assets/services/system-x-ceramic.webp"
+    >
       <p className="text-xs text-chrome/60 mb-4 uppercase tracking-wide">
         System-X Ceramic Protection Max G+
       </p>
@@ -27,7 +30,17 @@ export default function SystemXPage() {
       <p className="text-chrome/80 mb-3">
         Warranty with proper care, and reporting to your vehicle&apos;s Carfax report.
       </p>
-      <p className="text-chrome/80">Coatings are priced with a standard prep. Contact for a quote.</p>
+      <p className="text-chrome/80 mb-4">Coatings are priced with a standard prep. Contact for a quote.</p>
+      <p className="text-chrome/80">
+        <a
+          href="https://www.systemx.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-race font-semibold hover:underline"
+        >
+          systemx.com
+        </a>
+      </p>
     </ServicePage>
   );
 }

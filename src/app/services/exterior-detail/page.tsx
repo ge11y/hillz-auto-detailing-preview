@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ExteriorDetailPage() {
   return (
-    <ServicePage title="Exterior Detail">
+    <ServicePage title="Exterior Detail" heroSrc="/assets/services/exterior-detail.webp">
       <p className="text-chrome/90">Contact us for a quote.</p>
     </ServicePage>
   );

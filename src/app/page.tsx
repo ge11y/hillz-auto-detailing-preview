@@ -73,55 +73,98 @@ export default function HomePage() {
             <h2 className="font-display text-3xl uppercase tracking-wide mb-2">Services</h2>
             <p className="text-chrome/80 mb-8">Professional grade protection and detailing — contact for a quote.</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
-                <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
-                  01
-                </div>
-                <h3 className="font-display text-lg uppercase tracking-wide mb-2">System X Ceramic Protection</h3>
-                <p className="text-xs text-chrome/60 mb-3">System-X Ceramic Protection Max G+</p>
-                <p className="text-sm text-chrome/80 mb-3">
-                  Professional grade System X Ceramic Protection offered in 3/6/10 years.
-                </p>
-                <ul className="text-sm text-chrome/80 space-y-1.5 mb-4 list-disc pl-4">
-                  <li>Superior protection from elements</li>
-                  <li>High gloss, smooth finish</li>
-                  <li>Hard protective shell over your finish</li>
-                  <li>Hydrophobic, quick drying properties</li>
-                  <li>Easy 1X a year maintenance</li>
-                  <li>Lasting results that keep your finish best</li>
-                </ul>
-                <p className="text-sm text-chrome/80 mb-2">
-                  Warranty with proper care, and reporting to your vehicle&apos;s Carfax report.
-                </p>
-                <p className="text-sm text-chrome/80 mb-4">
-                  Coatings are priced with a standard prep. Contact for a quote.
-                </p>
-                <Link href="/services/system-x-ceramic-protection" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Learn more →
+              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
+                <Link href="/services/system-x-ceramic-protection" className="relative block aspect-[16/10] overflow-hidden group">
+                  <Image
+                    src="/assets/services/system-x-ceramic.webp"
+                    alt="System X Ceramic Protection"
+                    fill
+                    className="object-cover transition-transform duration-200 group-hover:scale-105"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
+                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+                    System X Ceramic Protection
+                  </h3>
                 </Link>
+                <div className="p-5 flex flex-col flex-1">
+                  <p className="text-xs text-chrome/60 mb-3">System-X Ceramic Protection Max G+</p>
+                  <p className="text-sm text-chrome/80 mb-3">
+                    Professional grade System X Ceramic Protection offered in 3/6/10 years.
+                  </p>
+                  <ul className="text-sm text-chrome/80 space-y-1.5 mb-4 list-disc pl-4">
+                    <li>Superior protection from elements</li>
+                    <li>High gloss, smooth finish</li>
+                    <li>Hard protective shell over your finish</li>
+                    <li>Hydrophobic, quick drying properties</li>
+                    <li>Easy 1X a year maintenance</li>
+                    <li>Lasting results that keep your finish best</li>
+                  </ul>
+                  <p className="text-sm text-chrome/80 mb-2">
+                    Warranty with proper care, and reporting to your vehicle&apos;s Carfax report.
+                  </p>
+                  <p className="text-sm text-chrome/80 mb-4">
+                    Coatings are priced with a standard prep. Contact for a quote.
+                  </p>
+                  <p className="text-sm text-chrome/80 mb-4">
+                    <a
+                      href="https://www.systemx.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-race font-semibold hover:underline cursor-pointer"
+                    >
+                      systemx.com
+                    </a>
+                  </p>
+                  <Link href="/services/system-x-ceramic-protection" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
+                    Learn more →
+                  </Link>
+                </div>
               </article>
 
-              <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
-                <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
-                  02
-                </div>
-                <h3 className="font-display text-lg uppercase tracking-wide mb-2">Paint Correction</h3>
-                <p className="text-sm text-chrome/80 mb-4">
-                  Custom paint correction to restore your vehicle&apos;s paint to its finest.
-                </p>
-                <Link href="/services/paint-correction" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Learn more →
+              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
+                <Link href="/services/paint-correction" className="relative block aspect-[16/10] overflow-hidden group">
+                  <Image
+                    src="/assets/services/paint-correction.webp"
+                    alt="Paint Correction"
+                    fill
+                    className="object-cover transition-transform duration-200 group-hover:scale-105"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
+                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+                    Paint Correction
+                  </h3>
                 </Link>
+                <div className="p-5 flex flex-col flex-1">
+                  <p className="text-sm text-chrome/80 mb-4">
+                    Custom paint correction to restore your vehicle&apos;s paint to its finest.
+                  </p>
+                  <Link href="/services/paint-correction" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
+                    Learn more →
+                  </Link>
+                </div>
               </article>
 
-              <article className="rounded-2xl bg-card border border-concrete p-6 shadow-sm">
-                <div className="h-10 w-10 rounded-lg bg-race/10 text-race flex items-center justify-center mb-4 font-display text-sm">
-                  03
-                </div>
-                <h3 className="font-display text-lg uppercase tracking-wide mb-2">Exterior Detail</h3>
-                <Link href="/services/exterior-detail" className="text-race font-semibold text-sm hover:underline cursor-pointer">
-                  Learn more →
+              <article className="rounded-2xl bg-card border border-concrete overflow-hidden shadow-sm flex flex-col">
+                <Link href="/services/exterior-detail" className="relative block aspect-[16/10] overflow-hidden group">
+                  <Image
+                    src="/assets/services/exterior-detail.webp"
+                    alt="Exterior Detail"
+                    fill
+                    className="object-cover transition-transform duration-200 group-hover:scale-105"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent" />
+                  <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-base md:text-lg uppercase tracking-wide text-white leading-snug">
+                    Exterior Detail
+                  </h3>
                 </Link>
+                <div className="p-5 flex flex-col flex-1">
+                  <Link href="/services/exterior-detail" className="mt-auto text-race font-semibold text-sm hover:underline cursor-pointer">
+                    Learn more →
+                  </Link>
+                </div>
               </article>
             </div>
           </div>
@@ -272,8 +315,11 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <div className="mx-auto max-w-6xl px-4 mt-12 pt-6 border-t border-chrome text-xs text-muted">
-            Preview only · Not indexed · © Hillz Auto Detailing LLC
+          <div className="mx-auto max-w-6xl px-4 mt-12 pt-6 border-t border-chrome text-xs text-muted flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span>Preview only · Not indexed · © Hillz Auto Detailing LLC</span>
+            <Link href="/privacy" className="text-concrete hover:text-yellow hover:underline">
+              Privacy
+            </Link>
           </div>
         </footer>
       </main>
