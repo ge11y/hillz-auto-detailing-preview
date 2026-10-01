@@ -129,14 +129,28 @@ export default function HomePage() {
         <section id="gallery" className="py-16 bg-ink text-white">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="font-display text-3xl uppercase tracking-wide mb-2">Gallery</h2>
-            <p className="text-muted mb-8">From the Google Business Profile.</p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-chrome">
-                <Image src="/photos/hero.jpg" alt="Shop floor with detailed vehicles" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-              </div>
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-chrome">
-                <Image src="/photos/hero.jpg" alt="Detailing bay detail" fill className="object-cover object-[60%_40%] scale-110" sizes="(max-width:768px) 100vw, 50vw" />
-              </div>
+            <p className="text-muted mb-8">Real job photos from Hillz Auto Detailing.</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {[
+                { src: "/assets/truck.webp", alt: "truck" },
+                { src: "/assets/vette.webp", alt: "vette" },
+                { src: "/assets/engine-bay.webp", alt: "engine bay" },
+                { src: "/assets/paint-correction.webp", alt: "PAINT correction" },
+                { src: "/assets/paint-correction-2.webp", alt: "paint correction" },
+                { src: "/assets/bike-detailing.webp", alt: "Bike detailing" },
+                { src: "/assets/mac-truck.webp", alt: "mac truck" },
+                { src: "/assets/work-vehicles.webp", alt: "Work Vehicles" },
+                { src: "/assets/car-detailing.webp", alt: "car detailing" },
+                { src: "/assets/car-detailing-2.webp", alt: "car detailing2" },
+                { src: "/assets/car-detail-3.webp", alt: "car detail 3" },
+                { src: "/assets/exterior-detail.webp", alt: "Exterior Detail" },
+                { src: "/assets/interior-detailing.webp", alt: "Interior Detailing" },
+                { src: "/assets/hillz-auto-detailing.webp", alt: "Hillz Auto detailing" },
+              ].map((shot) => (
+                <div key={shot.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-chrome">
+                  <Image src={shot.src} alt={shot.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw" />
+                </div>
+              ))}
             </div>
           </div>
         </section>
